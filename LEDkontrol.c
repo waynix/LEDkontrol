@@ -111,7 +111,7 @@ int main()
 	// divide system clock by 64
 	TCCR1B |= (0 << CS12) | (1 << CS11) | (1 << CS10);
 	TIMSK1 = (1 << OCIE1A);
-	OCR1A = 50;
+	OCR1A = 80;
 	SPIinit();
 
 	int16_t cnt = 0;
@@ -119,7 +119,7 @@ int main()
 	sei();
 	while(1)
 	{
-		_delay_ms(50);
+		_delay_ms(5);
 
 
 		PORTD ^= (1<< PD5);
