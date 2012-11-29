@@ -34,7 +34,7 @@ void update(int h)
 	for (int i = 0; i < 8; i++)
 	{
 		//HSV colorspace
-		int current = (h+i * 10)%360;//46
+		int current = (h+i * 30)%360;//46
 		int8_t block = (current) / 60;
 		int16_t hi = block <<5;
 
@@ -125,7 +125,7 @@ int main()
 	// divide system clock by 64
 	TCCR1B |= (0 << CS12) | (1 << CS11) | (1 << CS10);
 	TIMSK1 = (1 << OCIE1A);
-	OCR1A = 80;
+	OCR1A = 40;
 	SPIinit();
 
 	int16_t cnt = 0;
